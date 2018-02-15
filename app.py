@@ -29,7 +29,7 @@ def find_bmi_post():
 			bmi = weight/(height/100)**2
 			return render_template('find_bmi.html', result=str(bmi))
   	  	except ValueError:
-  	      		return "Please use cm and kg for your units."
+  	      return "Please use cm and kg for your units."
 
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
