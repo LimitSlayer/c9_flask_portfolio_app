@@ -22,15 +22,15 @@ def find_bmi_post():
 	  if request.method == 'GET':
 	  	return render_template('find_bmi.html')
 	  elif request.method == 'POST':
-  	      print(request.form['height'].split())
-  	      total = 0
-  	      try:
-  	      	height = int(request.form['height'])
-  	      	weight = int(request.form['weight'])
-		bmi = weight / (height/100)**2
-  	      	return render_template('find_bmi.html', result=str(bmi))
-  	      except ValueError:
-  	      	return "Please use cm and kg for your units."
+  	  	print(request.form['height'])
+		print(request.form['weight'])
+  	  	try:
+		  height = int(request.form['height'])
+		  weight = int(request.form['weight'])
+		  bmi = weight/(height/100)**2
+		  return render_template('find_bmi.html', result=str(bmi))
+  	  	except ValueError:
+  	      	  return "Please use cm and kg for your units."
 
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
