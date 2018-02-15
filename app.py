@@ -25,8 +25,8 @@ def find_bmi_post():
   	      print(request.form['height'].split())
   	      total = 0
   	      try:
-  	      	height = int(request.form['height']
-  	      	weight = int(request.form['weight']
+  	      	height = int(request.form['height'])
+  	      	weight = int(request.form['weight'])
 		bmi = weight / (height/100)**2
   	      	return render_template('find_bmi.html', result=str(bmi))
   	      except ValueError:
