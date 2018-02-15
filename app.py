@@ -17,20 +17,6 @@ def home_page():
 def profile(name):
 	return render_template('index.html', name=name)
 
-@app.route('/find_bmi', methods=['GET','POST'])
-def find_bmi_post():
-	  if request.method == 'GET':
-	  	return render_template('find_bmi.html')
-	  elif request.method == 'POST':
-  	  	print(request.form['height'])
-  	  	try:
-			height = int(request.form['height'])
-			weight = int(request.form['weight'])
-			bmi = weight/(height/100)**2
-			return render_template('find_bmi.html', result=str(bmi))
-  	  	except ValueError:
-  	      return "Please use cm and kg for your units."
-
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
 	  # --> ['5', '6', '8']
